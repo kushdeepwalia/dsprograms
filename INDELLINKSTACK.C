@@ -59,17 +59,20 @@ int main()
             push(max,item);
             printf("\n Updated stack is: ");
             display();
+            printf("\n Kushdeep Singh");
             Sleep(2000);
             break;
         case 2:
             pop();
             printf("\n Rest stack is: ");
             display();
+            printf("\n Kushdeep Singh");
             Sleep(2000);
             break;
         case 3:
             printf("\n Stack is: ");
             display();
+            printf("\n Kushdeep Singh");
             Sleep(2000);
             break;
         case 4:
