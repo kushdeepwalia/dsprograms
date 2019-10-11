@@ -105,6 +105,7 @@ int main()
     InfixToPostfix(infix,postfix);
     printf("Postfix Expression: ");
     puts(postfix);
+    printf("\n Kushdeep Singh");
     Sleep(5000);
     return 0;
 }
