@@ -45,23 +45,38 @@ Data structures programs--------all data structures programs at one place
     7.4) counting total number of records.
     7.5) deleting a record from end.
 
-08) INSERTIO.C
+08) INDELLINKSTACK.C
+    insertion and deletion of elements in stack (linked list representation)
+    
+09) INSERTIO.C
     inserting elements from linear array.
 
-09) LINEARSE.C
+10) INTOPOSTFIX.C
+    conversion from infix expression to postfix expression
+
+11) INTOPREFIX.C
+    conversion from infix expression to prefix expression
+
+12) LINEARSE.C
     linear searching of element from an linear array.
 
-10) LLMENU.C
-    10.1) creating a singly link list.
-    10.2) displaying a singly link list.
-    10.3.1) inserting a record at beginning.
-    10.3.2) inserting a record at end.
-    10.3.3) inserting a record at specific position.
-    10.4) counting total number of records.
-    10.5) reversing the list
-    10.6.1) deleting a record from beginning.
-    10.6.2) deleting a record from end.
-    10.6.3) deleting a record from specific position.
+13) LLMENU.C
+    13.1) creating a singly link list.
+    13.2) displaying a singly link list.
+    13.3.1) inserting a record at beginning.
+    13.3.2) inserting a record at end.
+    13.3.3) inserting a record at specific position.
+    13.4) counting total number of records.
+    13.5) reversing the list
+    13.6.1) deleting a record from beginning.
+    13.6.2) deleting a record from end.
+    13.6.3) deleting a record from specific position.
 
-11) TRAVERSA.C
+14) PUSHPOPARRAY.C
+    pushing and popping elements in stack (array representation)
+
+15) SPMATRIX.C
+    creating and displaying sparse matrix
+
+16) TRAVERSA.C
     traversing array elements
