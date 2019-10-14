@@ -4,7 +4,7 @@
 int main()
 {
     int q,i,j,m,n,t=0,b[10][10],a[10][10];
-    printf("\n Enter the size of matrix (rows and columns)");
+    printf("\n Enter the size of matrix (rows and columns) ");
     scanf("%d%d",&m,&n);
     printf("\n Enter matrix");
     for(i=0; i<m; i++)
@@ -34,7 +34,7 @@ int main()
         for(j=0; j<3; j++)
             printf(" %d",b[i][j]);
     }
-    printf("\n Kushdeep Singh");
+    printf("\n Kushdeep Singh ");
     Sleep(10000);
     return 0;
 }
