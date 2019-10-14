@@ -68,7 +68,7 @@ void InfixToPostfix(char infix_exp[], char postfix_exp[])
         else if(is_operator(item) == 1)
         {
             x=pop();
-            while(is_operator(x) == 1 && precedence(x)>= precedence(item))
+            while(is_operator(x) == 1 && precedence(x)> precedence(item))
             {
                 postfix_exp[j] = x;
                 j++;
@@ -89,7 +89,7 @@ void InfixToPostfix(char infix_exp[], char postfix_exp[])
         }
         else
         {
-            printf("\nInvalid infix Expression.\n");
+            printf("\n Invalid infix Expression.\n");
             return;
         }
         i++;
@@ -100,12 +100,12 @@ void InfixToPostfix(char infix_exp[], char postfix_exp[])
 int main()
 {
     char infix[SIZE], postfix[SIZE];
-    printf("\nEnter Infix expression : ");
+    printf("\n Enter Infix expression: ");
     gets(infix);
     InfixToPostfix(infix,postfix);
-    printf("Postfix Expression: ");
+    printf("\n Postfix Expression: ");
     puts(postfix);
     printf("\n Kushdeep Singh");
-    Sleep(5000);
+    Sleep(10000);
     return 0;
 }
