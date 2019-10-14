@@ -7,7 +7,7 @@ struct node
     int item;
     struct node *next;
 }*top=NULL;
-void push(int max,int item)
+void push(int item)
 {
     struct node *new_node;
     new_node=(struct node *)malloc(sizeof(struct node));
@@ -15,24 +15,26 @@ void push(int max,int item)
     new_node->next=top;
     top=new_node;
 }
-void pop()
+int pop()
 {
-    int item;
     struct node *node=top;
+    int item,c=1;
     if(top==NULL)
     {
         printf("\n Underflow Error");
-        return;
+        c=0;
+        return c;
     }
     item=node->item;
     top=top->next;
-    printf("\n Popped Element is: %d",item);
+    printf("\n Deleted Element is: %d",item);
+    return c;
 }
 void display()
 {
     int i;
     struct node *node=top;
-    while(node->next!=NULL)
+    while(node!=NULL)
     {
         printf(" %d",node->item);
         node=node->next;
@@ -40,37 +42,53 @@ void display()
 }
 int main()
 {
-    int ch,item;
+    int ch,item,a;
+    char c='n';
     const int max=15;
     do
     {
         system("cls");
-        printf("\n 1: PUSH ");
-        printf("\n 2: POP ");
-        printf("\n 3: DISPLAY ");
-        printf("\n 4: QUIT ");
+        printf("\n 1: Inserting elements in list ");
+        printf("\n 2: Deleting elements from list ");
+        printf("\n 3: Displaying array ");
+        printf("\n 4: Quit ");
         printf("\n Enter choice ");
         scanf("%d",&ch);
         switch(ch)
         {
         case 1:
-            printf("\n Enter number to push ");
-            scanf("%d",&item);
-            push(max,item);
-            printf("\n Updated stack is: ");
-            display();
+            do
+            {
+                printf("\n Enter number to insert ");
+                scanf("%d",&item);
+                push(item);
+                printf("\n Updated list is: ");
+                display();
+                printf("\n Press Y to continue pushing ");
+                c=getche();
+            }
+            while(c=='y' || c=='Y');
             printf("\n Kushdeep Singh");
-            Sleep(2000);
+            Sleep(5000);
             break;
         case 2:
-            pop();
-            printf("\n Rest stack is: ");
-            display();
+            do
+            {
+                a=pop();
+                if(a==1)
+                {
+                    printf("\n Rest list is: ");
+                    display();
+                    printf("\n Press Y to continue deleting ");
+                    c=getche();
+                }
+            }
+            while((c=='y' || c=='Y') && a==1);
             printf("\n Kushdeep Singh");
-            Sleep(2000);
+            Sleep(5000);
             break;
         case 3:
-            printf("\n Stack is: ");
+            printf("\n List is: ");
             display();
             printf("\n Kushdeep Singh");
             Sleep(2000);

@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<windows.h>
 #include<stdlib.h>
+#include<conio.h>
 int stack[15],top=-1;
 void push(int max,int item)
 {
@@ -12,17 +13,19 @@ void push(int max,int item)
     top++;
     stack[top]=item;
 }
-void pop()
+int pop()
 {
-    int item;
+    int item,c=1;
     if(top==-1)
     {
         printf("\n Underflow Error");
-        return;
+        c=0;
+        return c;
     }
     item=stack[top];
     top--;
     printf("\n Popped Element is: %d",item);
+    return c;
 }
 void display()
 {
@@ -32,40 +35,56 @@ void display()
 }
 int main()
 {
-    int ch,item;
+    int ch,item,a;
+    char c='n';
     const int max=15;
     do
     {
         system("cls");
-        printf("\n 1: PUSH ");
-        printf("\n 2: POP ");
-        printf("\n 3: DISPLAY ");
-        printf("\n 4: QUIT ");
+        printf("\n 1: Pushing elements in array ");
+        printf("\n 2: Popping elements from array ");
+        printf("\n 3: Displaying array ");
+        printf("\n 4: Quit ");
         printf("\n Enter choice ");
         scanf("%d",&ch);
         switch(ch)
         {
         case 1:
-            printf("\n Enter number to push ");
-            scanf("%d",&item);
-            push(max,item);
-            printf("\n Updated stack is: ");
-            display();
+            do
+            {
+                printf("\n Enter number to push ");
+                scanf("%d",&item);
+                push(max,item);
+                printf("\n Updated stack is: ");
+                display();
+                printf("\n press y to continue pushing ");
+                c=getche();
+            }
+            while(c=='y');
             printf("\n Kushdeep Singh");
-            Sleep(2000);
+            Sleep(5000);
             break;
         case 2:
-            pop();
-            printf("\n Rest stack is: ");
-            display();
+            do
+            {
+                a=pop();
+                if(a==1)
+                {
+                    printf("\n Rest stack is: ");
+                    display();
+                    printf("\n press y to continue popping ");
+                    c=getche();
+                }
+            }
+            while(c=='y' && a==1);
             printf("\n Kushdeep Singh");
-            Sleep(2000);
+            Sleep(5000);
             break;
         case 3:
             printf("\n Stack is: ");
             display();
             printf("\n Kushdeep Singh");
-            Sleep(2000);
+            Sleep(5000);
             break;
         case 4:
             exit(0);

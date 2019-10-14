@@ -68,7 +68,7 @@ char *InfixToPostfix(char infix_exp[], char postfix_exp[])
         else if(is_operator(item) == 1)
         {
             x=pop();
-            while(is_operator(x) == 1 && precedence(x)>= precedence(item))
+            while(is_operator(x) == 1 && precedence(x)>= precedence(item) && x!=item)
             {
                 postfix_exp[j] = x;
                 j++;
@@ -93,6 +93,7 @@ char *InfixToPostfix(char infix_exp[], char postfix_exp[])
             Sleep(5000);
             exit(1);
         }
+
         i++;
         item = infix_exp[i];
     }
@@ -105,30 +106,31 @@ void InfixToPrefix(char infix_exp[], char prefix_exp[])
     char postfix_exp[SIZE],temp;
     l=strlen(infix_exp);
     strrev(infix_exp);
-    for (int i = 0; i < l; i++) {
-
-        if (infix_exp[i] == '(') {
+    for (int i = 0; i < l; i++)
+    {
+        if (infix_exp[i] == '(')
+        {
             infix_exp[i] = ')';
             i++;
         }
-        else if (infix_exp[i] == ')') {
+        else if (infix_exp[i] == ')')
+        {
             infix_exp[i] = '(';
             i++;
         }
     }
     strcpy(prefix_exp,InfixToPostfix(infix_exp,postfix_exp));
-    l=strlen(prefix_exp);
     strrev(prefix_exp);
 }
 int main()
 {
     char infix[SIZE], prefix[SIZE];
-    printf("\nEnter Infix expression : ");
+    printf("\n Enter Infix expression : ");
     gets(infix);
     InfixToPrefix(infix,prefix);
-    printf("Prefix Expression: ");
-    printf("\n Kushdeep Singh");
+    printf("\n Prefix Expression: ");
     puts(prefix);
-    Sleep(5000);
+    printf("\n Kushdeep Singh");
+    Sleep(10000);
     return 0;
 }
