@@ -44,7 +44,11 @@ void display()
 {
     int i;
     for(i=front; i<=rear; i++)
-        printf(" %d",queue[i]);
+        if(queue[i]!=0)
+            printf("%d ",queue[i]);
+        else
+            printf("Empty ");
+
 }
 int main()
 {
@@ -73,7 +77,7 @@ int main()
                 c=getche();
             }
             while(c=='y');
-            printf("\n Kushdeep Singh");
+            printf("\n Jasveen Kaur \n ");
             system("pause");
             break;
         case 2:
@@ -89,13 +93,13 @@ int main()
                 }
             }
             while(c=='y' && a==1);
-            printf("\n Kushdeep Singh");
+            printf("\n Jasveen Kaur \n ");
             system("pause");
             break;
         case 3:
             printf("\n Queue is: ");
             display();
-            printf("\n Kushdeep Singh");
+            printf("\n Jasveen Kaur \n ");
             system("pause");
             break;
         case 4:
