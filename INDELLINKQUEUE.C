@@ -37,11 +37,12 @@ int deletion()
     if(front==NULL)
     {
         printf("\n Underflow Error");
-        c=0;
+        c=-1;
         return c;
     }
     else if(front==rear)
     {
+        printf("\n Deleted Element is: %d ",front->item);
         front=NULL;
         rear=NULL;
     }
@@ -50,37 +51,37 @@ int deletion()
         queue=front;
         printf("\n Deleted Element is: %d ",queue->item);
         front=queue->next;
+        if(front==NULL)
+            c=0;
     }
     return c;
 }
 void display()
 {
     struct node *queue;
-    queue=front;
-    while(queue!=NULL)
+    for(queue=front; queue!=NULL; queue=queue->next)
     {
         printf(" %d",queue->item);
-        queue=queue->next;
     }
 }
 int main()
 {
-    int ch,item,a;
+    int ch,item,a=1,d=-1,b=0;
     char c='n';
     do
     {
         system("cls");
         printf("\n 1: Inserting elements in list ");
         printf("\n 2: Deleting elements from list ");
-        printf("\n 3: Displaying array ");
+        printf("\n 3: Displaying list ");
         printf("\n 4: Quit ");
         printf("\n Enter choice ");
         scanf("%d",&ch);
         switch(ch)
         {
         case 1:
-             do
-             {
+            do
+            {
                 printf("\n Enter number to insert ");
                 scanf("%d",&item);
                 insert(item);
@@ -88,9 +89,10 @@ int main()
                 display();
                 printf("\n Press Y to continue insert ");
                 c=getche();
+                d++;
             }
             while(c=='y' || c=='Y');
-            printf("\n Kushdeep Singh");
+            printf("\n Jasveen Kaur \n ");
             system("pause");
             break;
         case 2:
@@ -99,20 +101,27 @@ int main()
                 a=deletion();
                 if(a==1)
                 {
-                    printf("\n Rest queue is: ");
+                    if(b==d)
+                        printf("\n Rest queue is: Empty ");
+                    else
+                        printf("\n Rest queue is: ");
                     display();
                     printf("\n Press Y to continue deleting ");
                     c=getche();
+                    b++;
                 }
             }
             while((c=='y' || c=='Y') && a==1);
-            printf("\n Kushdeep Singh");
+            printf("\n Jasveen Kaur \n ");
             system("pause");
             break;
         case 3:
-            printf("\n List is: ");
+            if(front==NULL)
+                printf("\n List is: Empty ");
+            else
+                printf("\n List is: ");
             display();
-            printf("\n Kushdeep Singh");
+            printf("\n Jasveen Kaur \n ");
             system("pause");
             break;
         case 4:
