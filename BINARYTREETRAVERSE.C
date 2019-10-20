@@ -17,16 +17,17 @@ struct node *insert_into_tree(char item, struct node *node)
         new_node->info=item;
         new_node->left =NULL;
         new_node->right=NULL;
+        printf("\n ");
         return new_node;
     }
     else if(node->info>=item)
     {
-        printf("\n Going to left side. ");
+        printf("->Left");
         node->left=insert_into_tree(item,node->left);
     }
     else
     {
-        printf("\n Going to right side. ");
+        printf("->Right");
         node->right=insert_into_tree(item,node->right);
     }
 }
@@ -88,19 +89,19 @@ void traversal(struct node *node)
     case 1 :
         printf("\n Preorder Traversal of tree is : ");
         preorder_traversal(node);
-        printf("\n Kushdeep Singh \n ");
+        printf("\n Jasveen Kaur \n ");
         system("pause");
         break;
     case 2 :
         printf("\n Inorder Traversal of tree is : ");
         inorder_traversal(node);
-        printf("\n Kushdeep Singh \n ");
+        printf("\n Jasveen Kaur \n ");
         system("pause");
         break;
     case 3 :
         printf("\n Postorder Traversal of tree is : ");
         postorder_traversal(node);
-        printf("\n Kushdeep Singh \n ");
+        printf("\n Jasveen Kaur \n ");
         system("pause");
         break;
     case 4:
@@ -144,13 +145,13 @@ int main()
             {
                 printf("\n Enter Item : ");
                 scanf(" %c",&item);
+                printf("\n Position of %c : Root",item);
                 root = insert_into_tree(item, root);
-                printf("\n Press y to continue: ");
+                printf("Press y to continue: ");
                 a=getche();
             }
             while(a=='y' || a=='Y');
-            printf("\n Items were entered in root : %c \n",root->info);
-            printf("\n Kushdeep Singh \n");
+            printf("\n Jasveen Kaur \n ");
             system("pause");
             break;
         case 2:
@@ -158,8 +159,11 @@ int main()
             break;
         case 3:
             printf("\n");
-            display_tree(root,0);
-            printf("\n Kushdeep Singh \n ");
+            if(root==NULL)
+                printf(" Tree is empty");
+            else
+                display_tree(root,0);
+            printf("\n Jasveen Kaur \n ");
             system("pause");
             break;
         case 4:
