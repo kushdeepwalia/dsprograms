@@ -92,7 +92,7 @@ int main()
                 d++;
             }
             while(c=='y' || c=='Y');
-            printf("\n Jasveen Kaur \n ");
+            printf("\n Kushdeep Singh \n ");
             system("pause");
             break;
         case 2:
@@ -112,7 +112,7 @@ int main()
                 }
             }
             while((c=='y' || c=='Y') && a==1);
-            printf("\n Jasveen Kaur \n ");
+            printf("\n Kushdeep Singh \n ");
             system("pause");
             break;
         case 3:
@@ -121,7 +121,7 @@ int main()
             else
                 printf("\n List is: ");
             display();
-            printf("\n Jasveen Kaur \n ");
+            printf("\n Kushdeep Singh \n ");
             system("pause");
             break;
         case 4:
