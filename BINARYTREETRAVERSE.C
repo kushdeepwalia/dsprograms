@@ -89,19 +89,19 @@ void traversal(struct node *node)
     case 1 :
         printf("\n Preorder Traversal of tree is : ");
         preorder_traversal(node);
-        printf("\n Jasveen Kaur \n ");
+        printf("\n Kushdeep Singh \n ");
         system("pause");
         break;
     case 2 :
         printf("\n Inorder Traversal of tree is : ");
         inorder_traversal(node);
-        printf("\n Jasveen Kaur \n ");
+        printf("\n Kushdeep Singh \n ");
         system("pause");
         break;
     case 3 :
         printf("\n Postorder Traversal of tree is : ");
         postorder_traversal(node);
-        printf("\n Jasveen Kaur \n ");
+        printf("\n Kushdeep Singh \n ");
         system("pause");
         break;
     case 4:
@@ -151,7 +151,7 @@ int main()
                 a=getche();
             }
             while(a=='y' || a=='Y');
-            printf("\n Jasveen Kaur \n ");
+            printf("\n Kushdeep Singh \n ");
             system("pause");
             break;
         case 2:
@@ -163,7 +163,7 @@ int main()
                 printf(" Tree is empty");
             else
                 display_tree(root,0);
-            printf("\n Jasveen Kaur \n ");
+            printf("\n Kushdeep Singh \n ");
             system("pause");
             break;
         case 4:
