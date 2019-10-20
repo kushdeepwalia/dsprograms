@@ -77,7 +77,7 @@ int main()
                 c=getche();
             }
             while(c=='y');
-            printf("\n Jasveen Kaur \n ");
+            printf("\n Kushdeep Singh \n ");
             system("pause");
             break;
         case 2:
@@ -93,13 +93,13 @@ int main()
                 }
             }
             while(c=='y' && a==1);
-            printf("\n Jasveen Kaur \n ");
+            printf("\n Kushdeep Singh \n ");
             system("pause");
             break;
         case 3:
             printf("\n Queue is: ");
             display();
-            printf("\n Jasveen Kaur \n ");
+            printf("\n Kushdeep Singh \n ");
             system("pause");
             break;
         case 4:
