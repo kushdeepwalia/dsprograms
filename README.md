@@ -6,6 +6,9 @@ Data structures programs--------all data structures programs at one place
 :-) BINARYTREETRAVERSE.C
     program to create, display and traverse the tree in inorder, postorder, preorder.
 
+:-) BSTMENU.C
+    program to create and display tree with deletion of 3 types.
+
 :-) BUBBLESO.C
     bubble sorting a linear array in ascending order.
 
