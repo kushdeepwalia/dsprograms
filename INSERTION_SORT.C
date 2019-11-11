@@ -1,38 +1,45 @@
-//25TH OCTOBER
 #include<stdio.h>
 #include<windows.h>
 #include<conio.h>
-int insert_sort(int a[],int n)
+int insert_sort(int a[],int b[],int n)
 {
-    int i,j,t,k;
-    printf("\n");
-    for(i=0; i<n-1; i++)
-        for(j=0; j<n-(i+1); j++)
-            if(a[j]>a[j+1])
+    int i,low,pos,j,temp;
+    low=a[0];
+    pos=0;
+    for(i=1; i<n; i++)
+        if(low>a[i])
+        {
+            low=a[i];
+            pos=i;
+        }
+    for(i=pos; i>0; i--)
+        a[i]=a[i-1];
+    b[i]=a[i]=low;
+    for(i=1; i<n; i++)
+    {
+        b[i]=a[i];
+        for(j=0; j<i; j++)
+            if(b[i]<b[j])
             {
-                t=a[j];
-                a[j]=a[j+1];
-                a[j+1]=t;
+                temp=b[i];
+                b[i]=b[j];
+                b[j]=temp;
             }
+    }
     return 0;
 }
 int main()
 {
-    int i,arr[20],size=1,num;
-    char test='n';
-    arr[size-1]=-1000;
-    do
-    {
-        printf("\n Enter the number to list: ");
-        scanf("%d",&num);
-        arr[size++]=num;
-        insert_sort(arr,size);
-        printf("\n Press Y to continue inserting number ");
-        test=getche();
-    }
-    while(test=='Y' || test=='y');
-    printf("\n Sorted list is: ");
-    for(i=1; i<size; i++)
-        printf("%d ",arr[i]);
+    int i,a[30],size,b[30];
+    printf("\n Enter the size of list: ");
+    scanf("%d",&size);
+    printf("\n Enter the list: ");
+    for(i=0; i<size; i++)
+        scanf("%d",&a[i]);
+    insert_sort(a,b,size);
+    printf("\n\n Sorted list is: \n ");
+    for(i=0; i<size; i++)
+        printf("%d ",b[i]);
+    printf("\n Kushdeep Singh \n");
     return 0;
 }

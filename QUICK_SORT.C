@@ -1,33 +1,49 @@
-//8TH NOVEMEBER
 #include<windows.h>
 #include<stdio.h>
-void quicksort(int arr[25],int lower,int upper)
+int pivot;
+void partition(int arr[],int beg,int end)
 {
-    int i,j,pivot,temp;
-    if(lower<upper)
+    int left=beg,temp,right=end,flag=0,k;
+    pivot=beg;
+    while(flag==0)
     {
-        pivot=lower;
-        i=lower;
-        j=upper;
-        while(i<j)
+        printf("\n Pivot Element is: %d",arr[pivot]);
+        while(arr[pivot]<=arr[right] && pivot!=right)
+            right--;
+        if(pivot==right)
+            flag=1;
+        else if(arr[pivot]>arr[right])
         {
-            while(arr[i]<=arr[pivot]&&i<upper)
-                i++;
-            while(arr[j]>arr[pivot])
-                j--;
-            if(i<j)
+            temp=arr[pivot];
+            arr[pivot]=arr[right];
+            arr[right]=temp;
+            pivot=right;
+        }
+        if(flag==0)
+        {
+            while(arr[pivot]>=arr[left] && pivot!=left)
+                left++;
+            if(pivot==left)
+                flag=1;
+            else if(arr[pivot]<arr[left])
             {
-                temp=arr[i];
-                arr[i]=arr[j];
-                arr[j]=temp;
+                temp=arr[pivot];
+                arr[pivot]=arr[left];
+                arr[left]=temp;
+                pivot=left;
             }
         }
-        temp=arr[pivot];
-        arr[pivot]=arr[j];
-        arr[j]=temp;
-        quicksort(arr,lower,j-1);
-        quicksort(arr,j+1,upper);
     }
+}
+int quicksort(int arr[],int beg,int end)
+{
+    if(beg<end)
+    {
+        partition(arr,beg,end);
+        quicksort(arr,beg,pivot-1);
+        quicksort(arr,pivot+1,end);
+    }
+    return 0;
 }
 int main()
 {
@@ -38,8 +54,9 @@ int main()
     for(i=0; i<count; i++)
         scanf("%d",&arr[i]);
     quicksort(arr,0,count-1);
-    printf("\n Sorted List is :");
+    printf("\n\n Sorted list is: \n ");
     for(i=0; i<count; i++)
         printf(" %d",arr[i]);
+    printf("\n Kushdeep Singh \n");
     return 0;
 }
