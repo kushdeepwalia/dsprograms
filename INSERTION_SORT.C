@@ -31,13 +31,14 @@ int insert_sort(int a[],int b[],int n)
 int main()
 {
     int i,a[30],size,b[30];
+    printf("\n INSERTION SORT ");
     printf("\n Enter the size of list: ");
     scanf("%d",&size);
     printf("\n Enter the list: ");
     for(i=0; i<size; i++)
         scanf("%d",&a[i]);
     insert_sort(a,b,size);
-    printf("\n\n Sorted list is: \n ");
+    printf("\n Sorted list is: \n ");
     for(i=0; i<size; i++)
         printf("%d ",b[i]);
     printf("\n Kushdeep Singh \n");

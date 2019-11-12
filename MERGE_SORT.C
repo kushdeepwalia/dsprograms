@@ -1,4 +1,3 @@
-//THORE GHANTON BAAD DEKHTE HAI ISKO
 #include<stdio.h>
 #include<windows.h>
 void merge(int arr[],int lower, int mid, int upper)
@@ -19,19 +18,6 @@ void merge(int arr[],int lower, int mid, int upper)
     while(j<n2)
         arr[k++]=R[j++];
 }
-void merging_list(int a[],int b[],int c[],int m,int n)
-{
-    int i=0,j=0,k=0;
-    while(i<m && j<n)
-        if(a[i]<b[j])
-            c[k++]=a[i++];
-        else
-            c[k++]=b[j++];
-    while(i<m)
-        c[k++]=a[i++];
-    while(j<n)
-        c[k++]=b[j++];
-}
 int merge_sort(int arr[],int lower,int upper)
 {
     if(lower<upper)
@@ -45,37 +31,17 @@ int merge_sort(int arr[],int lower,int upper)
 }
 int main()
 {
-    int list1[20],list2[20],list3[40],size_list1,size_list2,i,j=0,k=0;
-    printf("\n Enter the size of list 1 : ");
-    scanf("%d",&size_list1);
-    printf("\n Enter list 1 : ");
-    for(i=0; i<size_list1; i++)
-        scanf("%d",&list1[i]);
-    printf("\n Enter the size of list 2 : ");
-    scanf("%d",&size_list2);
-    printf("\n Enter list 2 : ");
-    for(i=0; i<size_list2; i++)
-        scanf("%d",&list2[i]);
-    i=0;
-    while(i<size_list1)
-        list3[k++]=list1[i++];
-    while(j<size_list2)
-        list3[k++]=list2[j++];
-    printf("\n Merged Unsorted List is : ");
-    for(i=0; i<k; i++)
-        printf(" %d ",list3[i]);
-    merge_sort(list1,0,size_list1-1);
-    merge_sort(list2,0,size_list2-1);
-    merging_list(list1,list2,list3,size_list1,size_list2);
-    printf("\n\n Sorted List 1 is: ");
-    for(i=0; i<size_list1; i++)
-        printf(" %d ",list1[i]);
-    printf("\n\n Sorted List 2 is: ");
-    for(i=0; i<size_list2; i++)
-        printf(" %d ",list2[i]);
-    printf("\n\n Merged Sorted List is : ");
-    for(i=0; i<size_list1+size_list2; i++)
-        printf(" %d ",list3[i]);
+    int list[20],size,i;
+    printf("\n MERGE SORT ");
+    printf("\n Enter the size of list : ");
+    scanf("%d",&size);
+    printf("\n Enter list : ");
+    for(i=0; i<size; i++)
+        scanf("%d",&list[i]);
+    merge_sort(list,0,size-1);
+    printf("\n Sorted List is: ");
+    for(i=0; i<size; i++)
+        printf("%d ",list[i]);
     printf("\n Kushdeep Singh \n");
     return 0;
 }

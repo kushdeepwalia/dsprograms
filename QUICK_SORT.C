@@ -7,7 +7,6 @@ void partition(int arr[],int beg,int end)
     pivot=beg;
     while(flag==0)
     {
-        printf("\n Pivot Element is: %d",arr[pivot]);
         while(arr[pivot]<=arr[right] && pivot!=right)
             right--;
         if(pivot==right)
@@ -48,13 +47,14 @@ int quicksort(int arr[],int beg,int end)
 int main()
 {
     int i,count,arr[25];
+    printf("\n QUICK SORT ");
     printf("\n Enter the size of unsorted list : ");
     scanf("%d",&count);
     printf("\n Enter %d elements: ", count);
     for(i=0; i<count; i++)
         scanf("%d",&arr[i]);
     quicksort(arr,0,count-1);
-    printf("\n\n Sorted list is: \n ");
+    printf("\n Sorted list is: \n ");
     for(i=0; i<count; i++)
         printf(" %d",arr[i]);
     printf("\n Kushdeep Singh \n");

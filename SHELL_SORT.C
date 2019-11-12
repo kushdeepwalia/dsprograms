@@ -55,13 +55,14 @@ int Shell_Sort(int arr[], int n)
 int main()
 {
     int i,arr[20],size;
+    printf("\n SHELL SORT ");
     printf("\n Enter size of the list ");
     scanf("%d",&size);
     printf("\n Enter the list ");
     for(i=0; i<size; i++)
         scanf("%d",&arr[i]);
     Shell_Sort(arr,size);
-    printf("\n\n Sorted list is: \n ");
+    printf("\n Sorted list is: \n ");
     for(i=0; i<size; i++)
         printf("%d ",arr[i]);
     printf("\n Kushdeep Singh \n");
