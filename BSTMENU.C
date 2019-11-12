@@ -31,7 +31,7 @@ void position(struct node *node,int num)
         if(node->left==NULL && node->right==NULL)
             printf("\n\n Case I: Deletion of number which have no child ");
         else if(node->left==NULL || node->right==NULL)
-            printf("\n\n Case II: Deletion of number which have only one child ");
+            printf("\n\n Case II: Deletion of number which have 1 child ");
         else if(node->left!=NULL && node->right!=NULL)
             printf("\n\n Case III: Deletion of number which have 2 child ");
     }
@@ -48,8 +48,8 @@ void position(struct node *node,int num)
 }
 void position_all(struct node *node,int num)
 {
-    if(node==root)
-        printf("\n Position of %d is : Root",num);
+    if(node->info==num)
+        return;
     else if (node->info>num)
     {
         printf("->Left");
@@ -104,6 +104,7 @@ int main()
                 scanf("%d",&item[i]);
             for(i=0; i<n ; i++)
                 root = insert_into_tree(item[i], root);
+            printf("\n Tree created ");
             printf("\n Kushdeep Singh \n ");
             system("pause");
             break;
@@ -146,11 +147,14 @@ int main()
             else
             {
                 display_tree(root,0);
-                printf("\n\n TO SEE ELEMENTS WITH THERE POSITION PRESS Y ELSE PRESS N TO MOVE FORWARD ");
+                printf("\n\n TO SEE ELEMENTS WITH THERE POSITION PRESS Y: ");
                 m=getche();
                 if(m=='Y' || m=='y')
                     for(i=0; i<n; i++)
+                    {
+                        printf("\n Position of %d is : Root",item[i]);
                         position_all(root,item[i]);
+                    }
                 else
                     Sleep(2000);
             }
