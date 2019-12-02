@@ -76,10 +76,45 @@ int display_tree(struct node *node,int l)
     display_tree(node->left,l);
     return 0;
 }
+int get_inorder_successor(struct node *node)
+{
+    while (node && node->left != NULL)
+        node = node->left;
+    return node->info;
+}
+struct node *delete_a_node(int item, struct node *node)
+{
+    struct node *temp;
+    int inorder_successor;
+    if(node == NULL)
+        return node;
+    if ( item < node->info )
+        node->left =  delete_a_node(item, node->left);
+    else if ( item > node->info )
+        node->right = delete_a_node(item, node->right);
+    else
+    {
+        if ( node->left == NULL )
+        {
+            temp = node->right;
+            free(node);
+            return temp;
+        }
+        else if (node->right == NULL)
+        {
+            temp = node->left;
+            free(node);
+            return temp;
+        }
+        inorder_successor = get_inorder_successor(node->right);
+        node->info = inorder_successor;
+        node->right = delete_a_node( inorder_successor, node->right );
+    }
+    return node;
+}
 int main()
 {
-    int ch,i=0,pos=-1,item[20],num,n;
-    char m='N';
+    int ch,item,num;
     do
     {
         system("cls");
@@ -97,13 +132,14 @@ int main()
                 printf("\n Previous tree is deleted ");
                 root=NULL;
             }
-            printf("\n Enter total number of items : ");
-            scanf("%d",&n);
-            printf("\n Enter %d Items : ",n);
-            for(i=0; i<n; i++)
-                scanf("%d",&item[i]);
-            for(i=0; i<n ; i++)
-                root = insert_into_tree(item[i], root);
+            printf("\n Enter the item you want to insert : (press -1 to finish) \n ");
+            while(item!=-1)
+            {
+                printf("\n Enter Item : \t");
+                scanf("%d", &item);
+                if (item!= -1)
+                    root = insert_into_tree(item, root);
+            }
             printf("\n Tree created ");
             printf("\n Kushdeep Singh \n ");
             system("pause");
@@ -113,29 +149,11 @@ int main()
                 printf("\n The tree is empty.....no deletion possible ");
             else
             {
-                printf("\n Enter item to be deleted ");
-                scanf("%d",&num);
-                for(i=0; i<n; i++)
-                {
-                    if(item[i]==num)
-                    {
-                        pos=i;
-                        break;
-                    }
-                }
-                if(pos==-1)
-                    printf("\n Number not found");
-                else
-                {
-                    printf("\n Position of %d : Root",num);
-                    position(root,num);
-                    for(i=pos; i<n; i++)
-                        item[i]=item[i+1];
-                    n--;
-                    root=NULL;
-                    for(i=0; i<n; i++)
-                        root = insert_into_tree(item[i], root);
-                }
+                printf("\n Enter the value you want to delete : \t");
+                scanf("%d", &num);
+                printf("\n Position of %d : Root",num);
+                position(root,num);
+                delete_a_node(num,root);
             }
             printf("\n Kushdeep Singh \n ");
             system("pause");
@@ -145,19 +163,7 @@ int main()
             if(root==NULL)
                 printf(" Tree is empty");
             else
-            {
                 display_tree(root,0);
-                printf("\n\n TO SEE ELEMENTS WITH THERE POSITION PRESS Y: ");
-                m=getche();
-                if(m=='Y' || m=='y')
-                    for(i=0; i<n; i++)
-                    {
-                        printf("\n Position of %d is : Root",item[i]);
-                        position_all(root,item[i]);
-                    }
-                else
-                    Sleep(2000);
-            }
             printf("\n Kushdeep Singh \n ");
             system("pause");
             break;
