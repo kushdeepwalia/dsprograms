@@ -63,6 +63,9 @@ Data structures programs--------all data structures programs at one place
 :-) INSERTIO.C
     inserting elements from linear array.
 
+:-) INSERTION_SORT.C
+    sorting a linear array by inserting numbers into another array in sorted form.
+
 :-) INTOPOSTFIX.C
     conversion from infix expression to postfix expression
 
@@ -84,8 +87,20 @@ Data structures programs--------all data structures programs at one place
     :) deleting a record from end.
     :) deleting a record from specific position.
 
+:-) MERGE_SORT.C
+    sorting a linear array by spliting, swapping and merging.
+
 :-) PUSHPOPARRAY.C
     pushing and popping elements in stack (array representation)
+
+:-) QUICK_SORT.C
+    sorting a linear array using a pivot element (0th subscript element).
+
+:-) SELECTION_SORT.C
+    sorting a linear array by selecting numbers and swapping them.
+
+:-) SHELL_SORT.C
+    sorting a linear array using gap and sublist concept.
 
 :-) SPMATRIX.C
     creating and displaying sparse matrix
